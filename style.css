@@ -1,0 +1,247 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: "Palatino Linotype", Palatino, Georgia, serif;
+    background: #0f1720;
+    color: #e7edf2;
+}
+
+nav{
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: linear-gradient(90deg, #08161d, #102833);
+    color: #f7fbfb;
+    min-height: 12vh;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.28);
+    /* text-decoration: none; */
+}
+
+nav ul{
+    list-style: none;
+    display: flex;
+    gap: 1.25rem;
+    margin: 0 auto;
+    width: min(1100px, 100%);
+    padding: 0 1.5rem;
+    justify-content: flex-end;
+    align-items: center;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.92rem;
+}
+
+nav ul li{
+    cursor: pointer;
+    border-radius: 999px;
+}
+
+nav ul li a{
+    display: block;
+    padding: 0.7rem 1rem;
+    border-radius: 999px;
+    color: #f7fbfb;
+    text-decoration: none;
+    transition: background-color 0.25s ease, transform 0.25s ease;
+    font-weight: 700;
+}
+
+nav ul li a:hover{
+    background-color: rgba(255, 255, 255, 0.12);
+    transform: translateY(-1px);
+    outline: none;
+}
+
+section{
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 4rem 1.5rem;
+}
+
+.section-content{
+    width: min(900px, 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.eyebrow{
+    display: inline-block;
+    padding: 0.45rem 1rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.08);
+    color: #dfe8ef;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+section h1,
+section h2{
+    font-size: clamp(2.25rem, 4vw, 4rem);
+    margin-bottom: 1rem;
+    color: #f3f7fa;
+}
+
+section p{
+    max-width: 650px;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #c2ced8;
+}
+
+.detail-grid{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.detail-card,
+.contact-card{
+    width: 100%;
+    background: rgba(9, 18, 26, 0.62);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 1.4rem;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.24);
+    backdrop-filter: blur(8px);
+}
+
+.detail-card h3{
+    margin-bottom: 0.75rem;
+    color: #f3f7fa;
+    font-size: 1.15rem;
+}
+
+.detail-card p,
+.contact-card p{
+    max-width: none;
+    font-size: 1rem;
+}
+
+.skill-list{
+    list-style: none;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.9rem;
+    margin-top: 1rem;
+}
+
+.skill-list li{
+    padding: 0.8rem 1.1rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.08);
+    color: #eef4f8;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+}
+
+.contact-card{
+    max-width: 420px;
+    text-align: left;
+}
+
+.contact-card p + p{
+    margin-top: 0.8rem;
+}
+
+#home{
+    background: linear-gradient(135deg, #16222d, #223446);
+}
+
+#home h1{
+    font-size: clamp(2.6rem, 5vw, 4.5rem);
+}
+
+#about{
+    background: linear-gradient(135deg, #1a2330, #243245);
+}
+
+#skills{
+    background: linear-gradient(135deg, #152028, #1e2c39);
+}
+
+#contact{
+    background: linear-gradient(135deg, #18252a, #21333a);
+}
+
+@media (max-width: 768px){
+    nav{
+        min-height: auto;
+        padding: 0.75rem 0;
+    }
+
+    nav ul{
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        padding: 0 1rem;
+        letter-spacing: 0.05em;
+    }
+
+    section{
+        min-height: auto;
+        padding: 3.5rem 1rem;
+    }
+
+    section p{
+        font-size: 1rem;
+    }
+
+    .detail-grid{
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px){
+    nav ul{
+        gap: 0.5rem;
+        font-size: 0.8rem;
+    }
+
+    nav ul li a{
+        padding: 0.6rem 0.85rem;
+    }
+
+    section{
+        padding: 3rem 0.9rem;
+    }
+
+    .section-content{
+        gap: 0.85rem;
+    }
+
+    .skill-list{
+        gap: 0.65rem;
+    }
+
+    .skill-list li{
+        padding: 0.7rem 0.95rem;
+        font-size: 0.95rem;
+    }
+
+    .contact-card{
+        text-align: center;
+    }
+}
+
